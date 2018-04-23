@@ -1,0 +1,5 @@
+atom-amd64.deb
+*.txt
+*.crt
+.vagrant
+.idea
