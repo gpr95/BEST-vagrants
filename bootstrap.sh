@@ -15,7 +15,7 @@ apt-get --yes --force-yes install curl git build-essential make build-essential 
 
 #Mitmproxy installation
 apt-get --yes --force-yes install libffi-dev libssl-dev libxml2-dev libxslt1-dev  zlib1g-dev \
-        libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
+        libfreetype6-dev liblcms2-dev libpcap-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
 pip install --upgrade cffi
 pip install --upgrade pyasn1
 pip install mitmproxy
