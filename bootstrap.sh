@@ -31,4 +31,4 @@ mkdir -p /root/go-src
 wget -q -O /root/go-src/go.tar.gz https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf /root/go-src/go.tar.gz
 export GOPATH="/root/go"
-/usr/local/go/bin/go get "github.com/praetorian-inc/trudy"
+/usr/local/go/bin/go get "https://github.com/gpr95/trudy"
