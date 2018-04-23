@@ -14,9 +14,6 @@ Vagrant.configure("2") do |config|
     #Provision all utilities
     victim.vm.provision :shell, path: "bootstrap.sh"
     victim.vm.provision :shell, path: "route.sh", run: "always"
-    victim.vm.provision "shell", inline: <<-SHELL
-      sudo -i /vagrant/do_something_with_ip.sh victim $(ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-    SHELL
   end
 
   config.vm.define "attacker" do |attacker|
@@ -34,8 +31,5 @@ Vagrant.configure("2") do |config|
     #Provision all utilities
     attacker.vm.provision :shell, path: "bootstrap.sh"
     attacker.vm.provision :shell, path: "route.sh", run: "always"
-    attacker.vm.provision "shell", inline: <<-SHELL
-      sudo -i /vagrant/do_something_with_ip.sh attacker $(ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-    SHELL
   end
 end

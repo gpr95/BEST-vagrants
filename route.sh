@@ -25,6 +25,3 @@ export DEBIAN_FRONTEND=noninteractive
 /bin/ip route del 0/0
 /sbin/route add default gw $INTERNET_ROUTER_IP dev eth1
 sysctl -w net.ipv4.ip_forward=1
-
-#Print ip addr
-ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}' > /vagrant/HOST.txt

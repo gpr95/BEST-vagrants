@@ -10,7 +10,7 @@ echo "nameserver 8.8.8.8" > /etc/resolv.conf
 apt-get --yes --force-yes update
 
 #Install some miscellaneous packages
-apt-get --yes --force-yes install curl git netsed nmap build-essential make build-essential libssl-dev zlib1g-dev libbz2-dev \
+apt-get --yes --force-yes install curl git build-essential make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev python-pip python python-dev python-setuptools tcpdump iptables iptables-dev vim
 
 #Mitmproxy installation
@@ -19,35 +19,6 @@ apt-get --yes --force-yes install libffi-dev libssl-dev libxml2-dev libxslt1-dev
 pip install --upgrade cffi
 pip install --upgrade pyasn1
 pip install mitmproxy
-
-#SSLStrip installation
-apt-get install --yes --force-yes sslstrip
-
-#SSLSniff installation
-apt-get --yes --force-yes install sslsniff
-
-#SoCat installation
-apt-get --yes --force-yes install socat
-
-#BTProxy installation
-apt-get --yes --force-yes install bluez bluez-cups bluez-dbg bluez-hcidump bluez-tools python-bluez libbluetooth-dev libbluetooth3 python-gobject python-dbus
-git clone https://github.com/conorpp/btproxy.git
-cd btproxy
-python setup.py install
-
-#Killerbee installation
-pip uninstall pyyaml
-apt-get --yes --force-yes install python-gtk2 python-cairo python-usb python-crypto python-serial python-dev libgcrypt-dev mercurial libyaml-dev libgcrypt11-dev libpython2.7-dev usbutils
-pip install pyyaml
-hg clone https://bitbucket.org/secdev/scapy-com
-cd scapy-com
-python setup.py install
-cd ..
-git clone https://github.com/riverloopsec/killerbee.git
-cd killerbee
-python setup.py install
-chmod +x ./tools/*
-echo 'export="$PATH:$HOME/killerbee/tools"' >> ~/.bashrc
 
 #Trudy installation
 echo 'export GOPATH="/root/go"' >> /root/.bashrc
