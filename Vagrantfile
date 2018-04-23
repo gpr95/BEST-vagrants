@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define "victim" do |victim|
+    victim.vm.hostname = "victim"
     victim.vm.box = "debian/jessie64"
     victim.vm.provider "virtualbox" do |v|
       # Recommended for debian x64
@@ -17,6 +18,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "attacker" do |attacker|
+    attacker.vm.hostname = "attacker"
     attacker.vm.box = "debian/jessie64"
     attacker.vm.provider "virtualbox" do |v|
       # Recommended for debian x64
